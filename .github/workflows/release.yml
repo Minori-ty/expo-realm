@@ -34,6 +34,7 @@ jobs:
 
             - name: 安装依赖
               run: |
+                  npm i eas-cli expo expo-doctor expo-cli typescript
                   npm i
 
     build:
@@ -47,12 +48,12 @@ jobs:
 
             - name: 检查 EXPO_TOKEN 是否存在
               run: |
-                if [ -z "$EXPO_TOKEN" ]; then
-                  echo "EXPO_TOKEN 未设置"
-                  exit 1
-                else
-                  echo "EXPO_TOKEN 已设置"
-                fi
+                  if [ -z "$EXPO_TOKEN" ]; then
+                    echo "EXPO_TOKEN 未设置"
+                    exit 1
+                  else
+                    echo "EXPO_TOKEN 已设置"
+                  fi
 
             - name: 缓存 gradle
               id: cache-gradle
