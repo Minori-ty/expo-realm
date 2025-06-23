@@ -106,6 +106,13 @@ jobs:
               id: version
               run: echo "VERSION=$(npm pkg get version | tr -d '\"')" >> $GITHUB_ENV
 
+            - name: 重命名apk
+              run: |
+                # 获取第一个 apk 文件名
+                APK_FILE=$(ls *.apk | head -n 1)
+                # 重命名
+                mv "$APK_FILE" "v${{ env.VERSION }}.apk"
+
             - name: 发布 Release
               uses: softprops/action-gh-release@v2
               env:
@@ -117,4 +124,4 @@ jobs:
                       发布版本 v${{ env.VERSION }}
                       - 更新了依赖
                       - 修复了一些问题
-                  files: '*.apk'
+                  files: 'v${{ env.VERSION }}.apk'
