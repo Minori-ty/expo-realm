@@ -7,7 +7,7 @@ import 'react-native-reanimated'
 import Realm from 'realm'
 import { AnimeSchema } from '../schema/anime'
 
-import { useColorScheme } from '@/hooks/useColorScheme'
+import { useColorScheme } from '../hooks/useColorScheme'
 const realm = new Realm({ schema: [AnimeSchema] })
 const RealmContext = createContext<Realm | undefined>(undefined)
 export default function RootLayout() {

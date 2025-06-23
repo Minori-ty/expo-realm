@@ -34,7 +34,7 @@ jobs:
 
             - name: 安装依赖
               run: |
-                  npm i eas-cli expo expo-doctor expo-cli typescript
+                  npm i -g eas-cli expo expo-doctor expo-cli typescript
                   npm i
 
     build:
@@ -79,7 +79,7 @@ jobs:
                   java-version: 17
                   cache: 'gradle'
 
-            - name: Cache Android SDK
+            - name: 缓存 Android SDK
               uses: actions/cache@v4
               with:
                   path: /usr/local/lib/android/sdk

@@ -1,9 +1,9 @@
-import { IconSymbol } from '@/components/ui/IconSymbol'
 import { useNavigation, useRouter } from 'expo-router'
 import React, { useEffect } from 'react'
 import { StyleSheet, TouchableOpacity } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import PageHeader from '../../components/PageHeader'
+import { IconSymbol } from '../../components/ui/IconSymbol'
 
 const schedule = () => {
     const navigation = useNavigation()
