@@ -98,7 +98,7 @@ jobs:
 
             - name: 打包expo应用
               run: |
-                  npm i eas-cli expo expo-doctor expo-cli typescript
+                  npm i -g eas-cli expo expo-doctor expo-cli typescript
                   npm i
                   npm run build
 
